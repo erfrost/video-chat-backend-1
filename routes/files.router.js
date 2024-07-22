@@ -9,6 +9,7 @@ router.post("/singleUpload", upload.single("image"), async (req, res) => {
     const file = req.file;
     const path = process.env.BASEIMAGESURL + file.filename;
 
+    console.log(file, path);
     res.status(200).json({ avatar_path: path });
   } catch {
     res
